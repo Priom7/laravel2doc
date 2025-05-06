@@ -1,6 +1,6 @@
 # Laravel2Doc (Tentative Release Date: End of MAY 2025)
 ### ⭐ Feel Free to leave a star and follow for updates
-Read the Article Here: [Laravel2Doc - Generate Sequence Diagrams from Your Laravel Application in Seconds](https://github.com/priom7)
+Read the Article Here: [Laravel2Doc - Generate Sequence Diagrams from Your Laravel Application in Seconds]([https://github.com/priom7](https://medium.com/@priom7197/laravel2doc-generate-sequence-diagrams-from-your-laravel-application-in-seconds-1-2-84bf8ac8a193))
 ---
 Automatically generate comprehensive documentation for Laravel applications, including Entity Relationship Diagrams (ERD), UML Class Diagrams, Sequence Diagrams, API Documentation, and more.
 
