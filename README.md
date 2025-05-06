@@ -16,6 +16,10 @@ Automatically generate comprehensive documentation for Laravel applications, inc
 - 🚀 **Interactive Interface**: Browse all documentation through a user-friendly web interface
 - 🔍 **Automatic Analysis**: No configuration needed - just install and run
 
+  <div align="center">
+   <img src="https://github.com/Priom7/laravel2doc/blob/main/dashboard-sample.png" alt="Cover Banner" width="100%" height="auto"> 
+</div>
+
 ## Installation
 
 ### Global Installation
@@ -65,24 +69,36 @@ Laravel2Doc generates the following documentation:
 - Database tables with columns and data types
 - Primary keys and foreign keys
 - Relationships between tables
+    <div align="center">
+   <img src="https://github.com/Priom7/laravel2doc/blob/main/erd-sample.png" alt="Cover Banner" width="100%" height="auto"> 
+</div>
 
 ### UML Class Diagrams
 
 - Models with properties and methods
 - Relationships between models
 - Inheritance hierarchies
+     <div align="center">
+   <img src="https://github.com/Priom7/laravel2doc/blob/main/uml-sample.png" alt="Cover Banner" width="100%" height="auto"> 
+</div>
 
 ### Sequence Diagrams
 
 - Controller actions and their interactions
 - Common operations like create, read, update, delete
 - Flow of data between components
+     <div align="center">
+   <img src="https://github.com/Priom7/laravel2doc/blob/main/sequence-sample.png" alt="Cover Banner" width="100%" height="auto"> 
+</div>
 
 ### API Documentation
 
 - Endpoints with HTTP methods
 - Controller handlers and parameters
 - Route definitions
+     <div align="center">
+   <img src="https://github.com/Priom7/laravel2doc/blob/main/api-sample.png" alt="Cover Banner" width="100%" height="auto"> 
+</div>
 
 ## How It Works
 
