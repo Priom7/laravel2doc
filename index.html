@@ -1,0 +1,1119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Laravel2Doc - Automated Documentation for Laravel</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      .gradient-bg {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      }
+      .feature-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      }
+      .diagram-placeholder {
+        background: linear-gradient(
+          45deg,
+          #f3f4f6 25%,
+          #ffffff 25%,
+          #ffffff 50%,
+          #f3f4f6 50%,
+          #f3f4f6 75%,
+          #ffffff 75%,
+          #ffffff 100%
+        );
+        background-size: 20px 20px;
+      }
+      .timeline-item:not(:last-child):after {
+        content: "";
+        position: absolute;
+        left: 7px;
+        top: 24px;
+        height: calc(100% - 24px);
+        width: 2px;
+        background: #e5e7eb;
+      }
+      .video-container {
+        position: relative;
+        padding-bottom: 56.25%;
+        height: 0;
+        overflow: hidden;
+      }
+      .video-container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+    </style>
+  </head>
+  <body class="font-sans antialiased text-gray-800">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm sticky top-0 z-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between h-16">
+          <div class="flex items-center">
+            <div class="flex-shrink-0 flex items-center">
+              <i class="fas fa-code text-blue-500 text-2xl mr-2"></i>
+              <span
+                class="font-bold text-xl bg-gradient-to-r from-purple-600 to-blue-500 bg-clip-text text-transparent"
+                >Laravel2Doc</span
+              >
+            </div>
+          </div>
+          <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
+            <a
+              href="#features"
+              class="border-blue-500 text-gray-900 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
+              >Features</a
+            >
+            <a
+              href="#how-it-works"
+              class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
+              >How It Works</a
+            >
+            <a
+              href="#timeline"
+              class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
+              >Timeline</a
+            >
+            <a
+              href="#contact"
+              class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
+              >Contact</a
+            >
+          </div>
+          <div class="hidden sm:ml-6 sm:flex sm:items-center">
+            <a
+              href="https://github.com/Priom7/laravel2doc"
+              target="_blank"
+              class="bg-gray-100 hover:bg-gray-200 px-4 py-2 rounded-md text-sm font-medium text-gray-700 flex items-center"
+            >
+              <i class="fab fa-github mr-2"></i> GitHub
+            </a>
+          </div>
+          <div class="-mr-2 flex items-center sm:hidden">
+            <button
+              type="button"
+              id="mobile-menu-button"
+              class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500"
+            >
+              <span class="sr-only">Open main menu</span>
+              <i class="fas fa-bars text-xl"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile menu -->
+      <div class="hidden sm:hidden" id="mobile-menu">
+        <div class="pt-2 pb-3 space-y-1">
+          <a
+            href="#features"
+            class="bg-blue-50 border-blue-500 text-blue-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium"
+            >Features</a
+          >
+          <a
+            href="#how-it-works"
+            class="border-transparent text-gray-600 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-800 block pl-3 pr-4 py-2 border-l-4 text-base font-medium"
+            >How It Works</a
+          >
+          <a
+            href="#timeline"
+            class="border-transparent text-gray-600 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-800 block pl-3 pr-4 py-2 border-l-4 text-base font-medium"
+            >Timeline</a
+          >
+          <a
+            href="#contact"
+            class="border-transparent text-gray-600 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-800 block pl-3 pr-4 py-2 border-l-4 text-base font-medium"
+            >Contact</a
+          >
+          <a
+            href="https://github.com/Priom7/laravel2doc"
+            target="_blank"
+            class="border-transparent text-gray-600 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-800 block pl-3 pr-4 py-2 border-l-4 text-base font-medium"
+            >GitHub</a
+          >
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="gradient-bg text-white">
+      <div class="max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8">
+        <div class="text-center">
+          <h1
+            class="text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl"
+          >
+            Automated Documentation for Laravel
+          </h1>
+          <p class="mt-6 max-w-2xl mx-auto text-xl text-blue-100">
+            Generate sequence diagrams, ERDs, UML diagrams, and API docs
+            directly from your Laravel codebase.
+          </p>
+          <div class="mt-10 flex justify-center space-x-4">
+            <a
+              href="#features"
+              class="px-8 py-3 border border-transparent text-base font-medium rounded-md text-blue-700 bg-white hover:bg-gray-100 md:py-4 md:text-lg md:px-10 transition duration-300"
+            >
+              Explore Features
+            </a>
+            <a
+              href="https://github.com/Priom7/laravel2doc"
+              target="_blank"
+              class="px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-900 bg-opacity-60 hover:bg-opacity-70 md:py-4 md:text-lg md:px-10 transition duration-300"
+            >
+              <i class="fab fa-github mr-2"></i> GitHub
+            </a>
+          </div>
+          <div
+            class="mt-8 bg-white bg-opacity-10 rounded-lg inline-block px-4 py-2"
+          >
+            <span class="font-medium">Open Source Release Expected:</span> End
+            of May 2025
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Features Section -->
+    <div id="features" class="py-16 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="lg:text-center">
+          <h2
+            class="text-base text-blue-600 font-semibold tracking-wide uppercase"
+          >
+            Features
+          </h2>
+          <p
+            class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl"
+          >
+            What Laravel2Doc Offers
+          </p>
+          <p class="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">
+            A comprehensive suite of documentation tools for Laravel developers.
+          </p>
+        </div>
+
+        <div class="mt-20">
+          <div class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-3">
+            <!-- Feature 1 -->
+            <div
+              class="feature-card relative bg-white p-6 rounded-lg shadow-md transition duration-300"
+            >
+              <div
+                class="absolute -top-6 left-6 bg-blue-500 rounded-full p-3 text-white"
+              >
+                <i class="fas fa-project-diagram text-xl"></i>
+              </div>
+              <h3 class="text-lg font-medium text-gray-900 mt-4">
+                Sequence Diagrams
+              </h3>
+              <p class="mt-2 text-base text-gray-500">
+                Visualize request flows between frontend, controllers, models,
+                and database with automated sequence diagrams.
+              </p>
+              <div
+                class="mt-4 diagram-placeholder h-32 rounded-md flex items-center justify-center"
+              >
+                <img
+                  style="height: 150px; width: 300px; cursor: pointer"
+                  src="https://raw.githubusercontent.com/Priom7/laravel2doc/refs/heads/main/sequence-sample.png"
+                  alt="Sample Sequence Diagram"
+                  class="rounded-md"
+                  onclick="openImageModal(this.src)"
+                />
+              </div>
+            </div>
+
+            <!-- Feature 2 -->
+            <div
+              class="feature-card relative bg-white p-6 rounded-lg shadow-md transition duration-300"
+            >
+              <div
+                class="absolute -top-6 left-6 bg-purple-500 rounded-full p-3 text-white"
+              >
+                <i class="fas fa-database text-xl"></i>
+              </div>
+              <h3 class="text-lg font-medium text-gray-900 mt-4">
+                ER Diagrams
+              </h3>
+              <p class="mt-2 text-base text-gray-500">
+                Automatically generate Entity Relationship Diagrams showing your
+                database structure and relationships.
+              </p>
+              <div
+                class="mt-4 diagram-placeholder h-32 rounded-md flex items-center justify-center"
+              >
+                <!-- <span class="text-gray-400 text-sm"
+                  >Sample ER diagram will appear here</span
+                > -->
+                <img
+                  style="height: 150px; width: 300px; cursor: pointer"
+                  src="https://raw.githubusercontent.com/Priom7/laravel2doc/refs/heads/main/erd-sample.png"
+                  alt="Sample ER Diagram"
+                  class="rounded-md"
+                  onclick="openImageModal(this.src)"
+                />
+              </div>
+            </div>
+
+            <!-- Feature 3 -->
+            <div
+              class="feature-card relative bg-white p-6 rounded-lg shadow-md transition duration-300"
+            >
+              <div
+                class="absolute -top-6 left-6 bg-green-500 rounded-full p-3 text-white"
+              >
+                <i class="fas fa-sitemap text-xl"></i>
+              </div>
+              <h3 class="text-lg font-medium text-gray-900 mt-4">
+                UML Class Diagrams
+              </h3>
+              <p class="mt-2 text-base text-gray-500">
+                Understand model relationships and class structures with
+                automatically generated UML diagrams.
+              </p>
+              <div
+                class="mt-4 diagram-placeholder h-32 rounded-md flex items-center justify-center"
+              >
+                <!-- <span class="text-gray-400 text-sm"
+                  >Sample UML diagram will appear here</span
+                > -->
+                <img
+                  style="height: 150px; width: 300px; cursor: pointer"
+                  src="https://raw.githubusercontent.com/Priom7/laravel2doc/refs/heads/main/uml-sample.png"
+                  alt="Sample UML Diagram"
+                  class="rounded-md"
+                  onclick="openImageModal(this.src)"
+                />
+              </div>
+            </div>
+
+            <!-- Feature 4 -->
+            <div
+              class="feature-card relative bg-white p-6 rounded-lg shadow-md transition duration-300"
+            >
+              <div
+                class="absolute -top-6 left-6 bg-yellow-500 rounded-full p-3 text-white"
+              >
+                <i class="fas fa-code text-xl"></i>
+              </div>
+              <h3 class="text-lg font-medium text-gray-900 mt-4">
+                API Documentation
+              </h3>
+              <p class="mt-2 text-base text-gray-500">
+                Auto-generate comprehensive API documentation with endpoints,
+                parameters, and example requests.
+              </p>
+              <div
+                class="mt-4 diagram-placeholder h-32 rounded-md flex items-center justify-center"
+              >
+                <!-- <span class="text-gray-400 text-sm"
+                  >Sample API docs will appear here</span
+                > -->
+                <img
+                  style="height: 150px; width: 300px; cursor: pointer"
+                  src="https://raw.githubusercontent.com/Priom7/laravel2doc/refs/heads/main/api-sample.png"
+                  alt="Sample API Docs"
+                  class="rounded-md"
+                  onclick="openImageModal(this.src)"
+                />
+              </div>
+            </div>
+
+            <!-- Feature 5 -->
+            <div
+              class="feature-card relative bg-white p-6 rounded-lg shadow-md transition duration-300"
+            >
+              <div
+                class="absolute -top-6 left-6 bg-red-500 rounded-full p-3 text-white"
+              >
+                <i class="fas fa-terminal text-xl"></i>
+              </div>
+              <h3 class="text-lg font-medium text-gray-900 mt-4">CLI Tool</h3>
+              <p class="mt-2 text-base text-gray-500">
+                Simple command-line interface to generate all documentation with
+                a single command.
+              </p>
+              <div
+                class="mt-4 bg-gray-800 text-green-400 p-3 rounded-md font-mono text-sm"
+              >
+                <span class="block">$ npx laravel2doc</span>
+                <span class="block mt-1">Generating documentation...</span>
+              </div>
+            </div>
+
+            <!-- Feature 6 -->
+            <div
+              class="feature-card relative bg-white p-6 rounded-lg shadow-md transition duration-300"
+            >
+              <div
+                class="absolute -top-6 left-6 bg-indigo-500 rounded-full p-3 text-white"
+              >
+                <i class="fas fa-tachometer-alt text-xl"></i>
+              </div>
+              <h3 class="text-lg font-medium text-gray-900 mt-4">
+                Interactive Dashboard
+              </h3>
+              <p class="mt-2 text-base text-gray-500">
+                View and navigate all generated documentation through a clean,
+                interactive web interface.
+              </p>
+              <div
+                class="mt-4 diagram-placeholder h-32 rounded-md flex items-center justify-center"
+              >
+                <!-- <span class="text-gray-400 text-sm"
+                  >Sample dashboard will appear here</span
+                > -->
+                <img
+                  style="height: 150px; width: 300px; cursor: pointer"
+                  src="https://raw.githubusercontent.com/Priom7/laravel2doc/refs/heads/main/dashboard-sample.png"
+                  alt="Sample Dashboard"
+                  class="rounded-md"
+                  onclick="openImageModal(this.src)"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Modal -->
+        <div
+          id="imageModal"
+          class="fixed inset-0 z-50 hidden bg-black bg-opacity-75 flex items-center justify-center"
+        >
+          <div class="relative">
+            <img
+              id="modalImage"
+              src=""
+              alt="Expanded Diagram"
+              class="rounded-lg max-w-full max-h-full"
+            />
+            <button
+              onclick="closeImageModal()"
+              class="absolute top-2 right-2 text-white text-2xl"
+            >
+              &times;
+            </button>
+          </div>
+        </div>
+
+        <script>
+          function openImageModal(src) {
+            const modal = document.getElementById("imageModal");
+            const modalImage = document.getElementById("modalImage");
+            modalImage.src = src;
+            modal.classList.remove("hidden");
+          }
+
+          function closeImageModal() {
+            const modal = document.getElementById("imageModal");
+            modal.classList.add("hidden");
+          }
+        </script>
+      </div>
+    </div>
+
+    <!-- How It Works Section -->
+    <div id="how-it-works" class="py-16 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="lg:text-center">
+          <h2
+            class="text-base text-blue-600 font-semibold tracking-wide uppercase"
+          >
+            Technology
+          </h2>
+          <p
+            class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl"
+          >
+            How Laravel2Doc Works
+          </p>
+          <p class="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">
+            Under the hood with the sequence.js module
+          </p>
+        </div>
+
+        <div class="mt-16">
+          <div class="lg:grid lg:grid-cols-2 lg:gap-8">
+            <div class="relative mb-8 lg:mb-0">
+              <div class="bg-white p-6 rounded-lg shadow-lg">
+                <h3 class="text-xl font-bold text-gray-900">
+                  Code Analysis Process
+                </h3>
+                <ol class="mt-4 space-y-4">
+                  <li class="flex items-start">
+                    <div
+                      class="flex-shrink-0 h-6 w-6 rounded-full bg-blue-500 flex items-center justify-center text-white text-sm font-bold"
+                    >
+                      1
+                    </div>
+                    <div class="ml-3">
+                      <p class="text-gray-700 font-medium">
+                        Controller Scanning
+                      </p>
+                      <p class="text-gray-500 text-sm mt-1">
+                        Identifies all controller methods (index, show, store,
+                        etc.)
+                      </p>
+                    </div>
+                  </li>
+                  <li class="flex items-start">
+                    <div
+                      class="flex-shrink-0 h-6 w-6 rounded-full bg-blue-500 flex items-center justify-center text-white text-sm font-bold"
+                    >
+                      2
+                    </div>
+                    <div class="ml-3">
+                      <p class="text-gray-700 font-medium">
+                        Sequence Classification
+                      </p>
+                      <p class="text-gray-500 text-sm mt-1">
+                        Categorizes actions based on RESTful conventions
+                      </p>
+                    </div>
+                  </li>
+                  <li class="flex items-start">
+                    <div
+                      class="flex-shrink-0 h-6 w-6 rounded-full bg-blue-500 flex items-center justify-center text-white text-sm font-bold"
+                    >
+                      3
+                    </div>
+                    <div class="ml-3">
+                      <p class="text-gray-700 font-medium">Model Discovery</p>
+                      <p class="text-gray-500 text-sm mt-1">
+                        Finds related models and their relationships
+                      </p>
+                    </div>
+                  </li>
+                  <li class="flex items-start">
+                    <div
+                      class="flex-shrink-0 h-6 w-6 rounded-full bg-blue-500 flex items-center justify-center text-white text-sm font-bold"
+                    >
+                      4
+                    </div>
+                    <div class="ml-3">
+                      <p class="text-gray-700 font-medium">Query Analysis</p>
+                      <p class="text-gray-500 text-sm mt-1">
+                        Identifies database queries triggered by each operation
+                      </p>
+                    </div>
+                  </li>
+                  <li class="flex items-start">
+                    <div
+                      class="flex-shrink-0 h-6 w-6 rounded-full bg-blue-500 flex items-center justify-center text-white text-sm font-bold"
+                    >
+                      5
+                    </div>
+                    <div class="ml-3">
+                      <p class="text-gray-700 font-medium">
+                        Diagram Generation
+                      </p>
+                      <p class="text-gray-500 text-sm mt-1">
+                        Creates Mermaid.js-based sequence diagrams
+                      </p>
+                    </div>
+                  </li>
+                </ol>
+              </div>
+            </div>
+
+            <div class="relative">
+              <div class="bg-white p-6 rounded-lg shadow-lg">
+                <h3 class="text-xl font-bold text-gray-900">Core Functions</h3>
+                <div class="mt-4 space-y-4">
+                  <div class="bg-gray-50 p-4 rounded-md">
+                    <p class="font-mono text-sm text-blue-600">
+                      generateSequenceDiagrams()
+                    </p>
+                    <p class="text-gray-600 text-sm mt-1">
+                      Scans all controllers and generates diagrams
+                    </p>
+                  </div>
+                  <div class="bg-gray-50 p-4 rounded-md">
+                    <p class="font-mono text-sm text-blue-600">
+                      generateShowSequence()
+                    </p>
+                    <p class="text-gray-600 text-sm mt-1">
+                      Handles show operations specifically
+                    </p>
+                  </div>
+                  <div class="bg-gray-50 p-4 rounded-md">
+                    <p class="font-mono text-sm text-blue-600">generateCSS()</p>
+                    <p class="text-gray-600 text-sm mt-1">
+                      Styles the dashboard output
+                    </p>
+                  </div>
+                  <div class="bg-gray-50 p-4 rounded-md">
+                    <p class="font-mono text-sm text-blue-600">
+                      generateJavaScript()
+                    </p>
+                    <p class="text-gray-600 text-sm mt-1">
+                      Adds interactivity to diagrams
+                    </p>
+                  </div>
+                  <div class="bg-gray-50 p-4 rounded-md">
+                    <p class="font-mono text-sm text-blue-600">
+                      generateIndexHTML()
+                    </p>
+                    <p class="text-gray-600 text-sm mt-1">
+                      Builds the main dashboard interface
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Demo Video -->
+        <div class="mt-16">
+          <h3 class="text-center text-2xl font-bold text-gray-900">
+            Demo Video
+          </h3>
+          <div
+            class="mt-8 video-container rounded-lg shadow-xl overflow-hidden"
+          >
+            <iframe
+              src="https://www.youtube.com/embed/ivZyPlLytCU"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+          </div>
+          <p class="mt-4 text-center text-gray-500">
+            Video: laravel2doc sequence diagram generation demo
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Timeline Section -->
+    <div id="timeline" class="py-16 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="lg:text-center">
+          <h2
+            class="text-base text-blue-600 font-semibold tracking-wide uppercase"
+          >
+            Roadmap
+          </h2>
+          <p
+            class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl"
+          >
+            Development Timeline
+          </p>
+          <p class="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">
+            Stay tuned for updates and the official release!
+          </p>
+        </div>
+
+        <div class="mt-16">
+          <div class="max-w-2xl mx-auto">
+            <div class="space-y-8">
+              <!-- Timeline Item 1 -->
+              <div class="relative timeline-item pl-8">
+                <div
+                  class="absolute left-0 top-0 h-4 w-4 rounded-full bg-blue-500 border-4 border-white"
+                ></div>
+                <div class="bg-gray-50 p-6 rounded-lg shadow">
+                  <div class="flex justify-between items-start">
+                    <div>
+                      <h3 class="text-lg font-bold text-gray-900">
+                        Initial Development
+                      </h3>
+                      <p class="text-gray-500 text-sm">March 2025</p>
+                    </div>
+                    <span
+                      class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded"
+                      >Completed</span
+                    >
+                  </div>
+                  <p class="mt-2 text-gray-600">
+                    Core architecture and sequence diagram generation
+                    implemented.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Timeline Item 2 -->
+              <div class="relative timeline-item pl-8">
+                <div
+                  class="absolute left-0 top-0 h-4 w-4 rounded-full bg-blue-500 border-4 border-white"
+                ></div>
+                <div class="bg-gray-50 p-6 rounded-lg shadow">
+                  <div class="flex justify-between items-start">
+                    <div>
+                      <h3 class="text-lg font-bold text-gray-900">
+                        ERD & UML Features
+                      </h3>
+                      <p class="text-gray-500 text-sm">April 2025</p>
+                    </div>
+                    <span
+                      class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded"
+                      >Completed</span
+                    >
+                  </div>
+                  <p class="mt-2 text-gray-600">
+                    Added Entity Relationship Diagrams and UML Class Diagram
+                    generation.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Timeline Item 3 -->
+              <div class="relative timeline-item pl-8">
+                <div
+                  class="absolute left-0 top-0 h-4 w-4 rounded-full bg-yellow-500 border-4 border-white"
+                ></div>
+                <div class="bg-gray-50 p-6 rounded-lg shadow">
+                  <div class="flex justify-between items-start">
+                    <div>
+                      <h3 class="text-lg font-bold text-gray-900">
+                        Beta Testing
+                      </h3>
+                      <p class="text-gray-500 text-sm">May 2025</p>
+                    </div>
+                    <span
+                      class="bg-yellow-100 text-yellow-800 text-xs font-medium px-2.5 py-0.5 rounded"
+                      >In Progress</span
+                    >
+                  </div>
+                  <p class="mt-2 text-gray-600">
+                    Currently testing edge cases and improving the interactive
+                    dashboard.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Timeline Item 4 -->
+              <div class="relative timeline-item pl-8">
+                <div
+                  class="absolute left-0 top-0 h-4 w-4 rounded-full bg-purple-500 border-4 border-white"
+                ></div>
+                <div class="bg-gray-50 p-6 rounded-lg shadow">
+                  <div class="flex justify-between items-start">
+                    <div>
+                      <h3 class="text-lg font-bold text-gray-900">
+                        Open Source Release
+                      </h3>
+                      <p class="text-gray-500 text-sm">End of May 2025</p>
+                    </div>
+                    <span
+                      class="bg-purple-100 text-purple-800 text-xs font-medium px-2.5 py-0.5 rounded"
+                      >Upcoming</span
+                    >
+                  </div>
+                  <p class="mt-2 text-gray-600">
+                    Official GitHub repository launch with complete
+                    documentation.
+                  </p>
+                  <div
+                    class="mt-4 bg-blue-50 border-l-4 border-blue-500 p-4 rounded"
+                  >
+                    <p class="text-blue-700 font-medium">
+                      Stay tuned for updates, resources, and links!
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA Section -->
+    <div class="bg-gradient-to-r from-blue-600 to-purple-600">
+      <div
+        class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8 lg:flex lg:items-center lg:justify-between"
+      >
+        <h2
+          class="text-3xl font-extrabold tracking-tight text-white sm:text-4xl"
+        >
+          <span class="block"
+            >Ready to simplify your Laravel documentation?</span
+          >
+          <span class="block text-blue-200">Get notified when we launch.</span>
+        </h2>
+        <div class="mt-8 flex lg:mt-0 lg:flex-shrink-0">
+          <div class="inline-flex rounded-md shadow">
+            <a
+              href="https://github.com/Priom7/laravel2doc"
+              target="_blank"
+              class="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-blue-600 bg-white hover:bg-blue-50"
+            >
+              <i class="fab fa-github mr-2"></i> Star on GitHub
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Contact Section -->
+    <div id="contact" class="py-16 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="lg:text-center">
+          <h2
+            class="text-base text-blue-600 font-semibold tracking-wide uppercase"
+          >
+            Contact
+          </h2>
+          <p
+            class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl"
+          >
+            Get In Touch
+          </p>
+          <p class="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">
+            Have questions or want to contribute? Reach out to us.
+          </p>
+        </div>
+
+        <div class="mt-12">
+          <div class="bg-white shadow-xl rounded-lg overflow-hidden">
+            <div class="grid grid-cols-1 md:grid-cols-2">
+              <div class="p-8">
+                <h3 class="text-lg font-medium text-gray-900">
+                  Send us a message
+                </h3>
+                <form class="mt-6 space-y-6">
+                  <div>
+                    <label
+                      for="name"
+                      class="block text-sm font-medium text-gray-700"
+                      >Name</label
+                    >
+                    <input
+                      type="text"
+                      id="name"
+                      name="name"
+                      class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+                    />
+                  </div>
+                  <div>
+                    <label
+                      for="email"
+                      class="block text-sm font-medium text-gray-700"
+                      >Email</label
+                    >
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+                    />
+                  </div>
+                  <div>
+                    <label
+                      for="message"
+                      class="block text-sm font-medium text-gray-700"
+                      >Message</label
+                    >
+                    <textarea
+                      id="message"
+                      name="message"
+                      rows="4"
+                      class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+                    ></textarea>
+                  </div>
+                  <div>
+                    <a
+                      href="mailto:priom7197@gmail.com?subject=Laravel2Doc%20Queries"
+                      class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+                    >
+                      Send Message
+                    </a>
+                  </div>
+                </form>
+              </div>
+              <div class="bg-gray-50 p-8">
+                <h3 class="text-lg font-medium text-gray-900">
+                  Contact Information
+                </h3>
+                <div class="mt-6 space-y-4">
+                  <div class="flex">
+                    <div class="flex-shrink-0 h-6 w-6 text-gray-400">
+                      <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="ml-3 text-base text-gray-500">
+                      <p>priom7197@gmail.com</p>
+                    </div>
+                  </div>
+                  <div class="flex">
+                    <div class="flex-shrink-0 h-6 w-6 text-gray-400">
+                      <i class="fab fa-github"></i>
+                    </div>
+                    <div class="ml-3 text-base text-gray-500">
+                      <a
+                        href="https://github.com/Priom7/laravel2doc"
+                        target="_blank"
+                        class="hover:text-blue-600"
+                        >github.com/Priom7/laravel2doc</a
+                      >
+                    </div>
+                  </div>
+                  <!-- <div class="flex">
+                    <div class="flex-shrink-0 h-6 w-6 text-gray-400">
+                      <i class="fab fa-twitter"></i>
+                    </div>
+                    <div class="ml-3 text-base text-gray-500">
+                      <a
+                        href="https://twitter.com/laravel2doc"
+                        target="_blank"
+                        class="hover:text-blue-600"
+                        >@laravel2doc</a
+                      >
+                    </div>
+                  </div> -->
+                  <div class="flex">
+                    <div class="flex-shrink-0 h-6 w-6 text-gray-400">
+                      <i class="fab fa-linkedin"></i>
+                    </div>
+                    <div class="ml-3 text-base text-gray-500">
+                      <a
+                        href="https://www.linkedin.com/in/md-sharif-alam/"
+                        target="_blank"
+                        class="hover:text-blue-600"
+                        >https://www.linkedin.com/in/md-sharif-alam/</a
+                      >
+                    </div>
+                  </div>
+                  <div class="flex">
+                    <div class="flex-shrink-0 h-6 w-6 text-gray-400">
+                      <i class="fab fa-medium"></i>
+                    </div>
+                    <div class="ml-3 text-base text-gray-500">
+                      <a
+                        href="https://medium.com/@priom7197"
+                        target="_blank"
+                        class="hover:text-blue-600"
+                        >@priom7197</a
+                      >
+                    </div>
+                  </div></div>
+                </div>
+                <!-- <div class="mt-8">
+                  <h4 class="text-sm font-medium text-gray-900">
+                    Join our community
+                  </h4>
+                  <div class="mt-3 flex space-x-4">
+                    <a href="#" class="text-gray-400 hover:text-gray-500">
+                      <span class="sr-only">Discord</span>
+                      <i class="fab fa-discord text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-gray-500">
+                      <span class="sr-only">Slack</span>
+                      <i class="fab fa-slack text-xl"></i>
+                    </a>
+                  </div>
+                </div> -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800">
+      <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+        <div class="xl:grid xl:grid-cols-3 xl:gap-8">
+          <div class="space-y-8 xl:col-span-1">
+            <div class="flex items-center">
+              <i class="fas fa-code text-blue-500 text-2xl mr-2"></i>
+              <span class="font-bold text-xl text-white">Laravel2Doc</span>
+            </div>
+            <p class="text-gray-300 text-base">
+              Automating Laravel documentation with beautiful visualizations.
+            </p>
+            <div class="flex space-x-6">
+              <a
+                href="https://github.com/Priom7/laravel2doc"
+                target="_blank"
+                class="text-gray-400 hover:text-white"
+              >
+                <span class="sr-only">GitHub</span>
+                <i class="fab fa-github text-xl"></i>
+              </a>
+              <a href="#" class="text-gray-400 hover:text-white">
+                <span class="sr-only">Twitter</span>
+                <i class="fab fa-twitter text-xl"></i>
+              </a>
+            </div>
+          </div>
+          <div class="mt-12 grid grid-cols-2 gap-8 xl:mt-0 xl:col-span-2">
+            <div class="md:grid md:grid-cols-2 md:gap-8">
+              <div>
+                <h3
+                  class="text-sm font-semibold text-gray-300 tracking-wider uppercase"
+                >
+                  Product
+                </h3>
+                <ul class="mt-4 space-y-4">
+                  <li>
+                    <a
+                      href="#features"
+                      class="text-base text-gray-400 hover:text-white"
+                      >Features</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="#how-it-works"
+                      class="text-base text-gray-400 hover:text-white"
+                      >How It Works</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="#timeline"
+                      class="text-base text-gray-400 hover:text-white"
+                      >Roadmap</a
+                    >
+                  </li>
+                </ul>
+              </div>
+              <div class="mt-12 md:mt-0">
+                <h3
+                  class="text-sm font-semibold text-gray-300 tracking-wider uppercase"
+                >
+                  Resources
+                </h3>
+                <ul class="mt-4 space-y-4">
+                  <li>
+                    <a href="#" class="text-base text-gray-400 hover:text-white"
+                      >Documentation</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#" class="text-base text-gray-400 hover:text-white"
+                      >Tutorials</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#" class="text-base text-gray-400 hover:text-white"
+                      >Blog</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="md:grid md:grid-cols-2 md:gap-8">
+              <div>
+                <h3
+                  class="text-sm font-semibold text-gray-300 tracking-wider uppercase"
+                >
+                  Legal
+                </h3>
+                <ul class="mt-4 space-y-4">
+                  <li>
+                    <a href="#" class="text-base text-gray-400 hover:text-white"
+                      >Privacy</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#" class="text-base text-gray-400 hover:text-white"
+                      >Terms</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#" class="text-base text-gray-400 hover:text-white"
+                      >License</a
+                    >
+                  </li>
+                </ul>
+              </div>
+              <div class="mt-12 md:mt-0">
+                <h3
+                  class="text-sm font-semibold text-gray-300 tracking-wider uppercase"
+                >
+                  Support
+                </h3>
+                <ul class="mt-4 space-y-4">
+                  <li>
+                    <a
+                      href="#contact"
+                      class="text-base text-gray-400 hover:text-white"
+                      >Contact</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#" class="text-base text-gray-400 hover:text-white"
+                      >FAQ</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#" class="text-base text-gray-400 hover:text-white"
+                      >Community</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="mt-12 border-t border-gray-700 pt-8">
+          <p class="text-base text-gray-400 text-center">
+            &copy; 2025 Md Sharif Alam (Priom7). All rights reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Mobile menu toggle
+      document
+        .getElementById("mobile-menu-button")
+        .addEventListener("click", function () {
+          const menu = document.getElementById("mobile-menu");
+          if (menu.classList.contains("hidden")) {
+            menu.classList.remove("hidden");
+            menu.classList.add("block");
+          } else {
+            menu.classList.remove("block");
+            menu.classList.add("hidden");
+          }
+        });
+
+      // Smooth scrolling for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+
+          const targetId = this.getAttribute("href");
+          if (targetId === "#") return;
+
+          const targetElement = document.querySelector(targetId);
+          if (targetElement) {
+            targetElement.scrollIntoView({
+              behavior: "smooth",
+            });
+
+            // Close mobile menu if open
+            const mobileMenu = document.getElementById("mobile-menu");
+            if (!mobileMenu.classList.contains("hidden")) {
+              mobileMenu.classList.remove("block");
+              mobileMenu.classList.add("hidden");
+            }
+          }
+        });
+      });
+
+      // Form submission handling
+      const contactForm = document.querySelector("form");
+      if (contactForm) {
+        contactForm.addEventListener("submit", function (e) {
+          e.preventDefault();
+          alert("Thank you for your message! We will get back to you soon.");
+          this.reset();
+        });
+      }
+    </script>
+  </body>
+</html>
