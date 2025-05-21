@@ -1,0 +1,52 @@
+{
+    "name": "@priom7/laravel2doc",
+    "version": "0.0.1",
+    "description": "Automatically generate comprehensive documentation for Laravel applications",
+    "main": "index.js",
+    "bin": {
+        "laravel2doc": "./index.js"
+    },
+    "scripts": {
+        "start": "node index.js",
+        "test": "jest"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/priom7/laravel2doc.git"
+    },
+    "keywords": [
+        "laravel",
+        "documentation",
+        "generator",
+        "erd",
+        "uml",
+        "sequence-diagram",
+        "api-docs",
+        "automation"
+    ],
+    "author": "Md Sharif Alam (priom7)",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/priom7/laravel2doc/issues"
+    },
+    "homepage": "https://github.com/priom7/laravel2doc#readme",
+    "dependencies": {
+        "chalk": "^4.1.2",
+        "commander": "^9.4.1",
+        "ejs": "^3.1.8",
+        "express": "^4.18.2",
+        "figlet": "^1.5.2",
+        "glob": "^8.0.3",
+        "open": "^8.4.0",
+        "ora": "^5.4.1"
+    },
+    "devDependencies": {
+        "jest": "^29.3.1"
+    },
+    "engines": {
+        "node": ">=14.0.0"
+    },
+    "publishConfig": {
+        "access": "public"
+    }
+}
