@@ -1500,7 +1500,7 @@ function generateIndexHTML(
 }
 
 function generateDiagramViewHTML(projectInfo, diagram, config) {
-  const dir = "/Users/local/Desktop/apps/test/laravel2doc/";
+  const dir = path.resolve(process.cwd(), "laravel2doc");
   const filePath = path.join(
     dir, // Remove /lib from the path
     "sequence", // Add sequence directory // Add generators directory
@@ -1525,7 +1525,8 @@ function generateDiagramViewHTML(projectInfo, diagram, config) {
 </head>
 <body>
   <header>
-    <h1>${diagram.name}</h1>
+  ${projectInfo}, ${diagram}, ${config}
+    <h1>${diagram.name}ehtrhrhjtrhtrh</h1>
     <h2>${projectInfo.name} (Laravel ${projectInfo.version})</h2>
   </header>
   

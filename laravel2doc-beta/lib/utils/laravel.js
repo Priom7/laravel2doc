@@ -1,7 +1,7 @@
 const fs = require("fs");
 const path = require("path");
 const glob = require("glob");
-const dir = "/Users/local/Desktop/apps/test/laravel2doc/";
+const dir = path.resolve(process.cwd(), "laravel2doc");
 /**
  * Check if the current directory is a Laravel project
  * @returns {boolean} True if Laravel project is detected
@@ -46,11 +46,11 @@ async function extractLaravelInfo() {
     relationships: [],
   };
  
-  generateMainIndex();
+  generateMainIndex(dir);
 
   // Generate styles
 
-  generateStyles();
+  generateStyles(dir);
 
   // Get project name from composer.json
   try {
@@ -197,7 +197,7 @@ function parseModelRelationships(models) {
   return relationships;
 }
 
-function generateMainIndex() {
+function generateMainIndex(dir) {
   const htmlContent = `
 <!DOCTYPE html>
 <html lang="en">
@@ -272,7 +272,7 @@ function generateMainIndex() {
   fs.writeFileSync(path.join(dir, "index.html"), htmlContent);
 }
 
-function generateStyles() {
+function generateStyles(dir) {
   const cssContent = `
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
