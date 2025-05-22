@@ -1,5 +1,6 @@
-# Laravel2Doc (Live Now MAY 2025)
+# Laravel2Doc (Live Now, MAY 2025)
 ### ⭐ Feel Free to leave a star and follow for updates
+## Feedback is always welcome, and please do feel free to request more features you might want to see in future implementations. 
 Read the Article Here: Laravel2Doc - Generate Sequence Diagrams from Your Laravel Application in Seconds -   <a href="https://medium.com/@priom7197/laravel2doc-generate-sequence-diagrams-from-your-laravel-application-in-seconds-1-2-84bf8ac8a193">
         <img src="https://img.shields.io/badge/Read%20Article-%23000000?style=for-the-badge&logo=medium&logoColor=white" alt="Read Article">
       </a>
