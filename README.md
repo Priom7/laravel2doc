@@ -1,126 +1,157 @@
-# Laravel2Doc (Live Now, MAY 2025) ![npm](https://img.shields.io/npm/dt/@priom7/laravel2doc)
-### ⭐ Feel Free to leave a star and follow for updates
-## Feedback is always welcome, and please do feel free to request more features you might want to see in future implementations. 
-Read the Article Here: Laravel2Doc - Generate Sequence Diagrams from Your Laravel Application in Seconds -   <a href="https://medium.com/@priom7197/laravel2doc-generate-sequence-diagrams-from-your-laravel-application-in-seconds-1-2-84bf8ac8a193">
-        <img src="https://img.shields.io/badge/Read%20Article-%23000000?style=for-the-badge&logo=medium&logoColor=white" alt="Read Article">
-      </a>
+
+# Laravel2Doc (Live Now — May 2025)
+
+[![npm version](https://img.shields.io/npm/v/@priom7/laravel2doc?color=blue)](https://www.npmjs.com/package/@priom7/laravel2doc)
+[![npm downloads](https://img.shields.io/npm/dt/@priom7/laravel2doc?label=Downloads&color=green)](https://www.npmjs.com/package/@priom7/laravel2doc)
+[![License: MIT](https://img.shields.io/badge/license-MIT-yellow.svg)](LICENSE)
+[![Node.js](https://img.shields.io/badge/Node.js-%3E=14.0.0-brightgreen)](https://nodejs.org/)
+[![Made by priom7](https://img.shields.io/badge/Made%20by-priom7-blueviolet)](https://github.com/priom7)
+
+> Automatically generate beautiful, interactive documentation for Laravel projects in seconds.
+
 ---
-Automatically generate comprehensive documentation for Laravel applications, including Entity Relationship Diagrams (ERD), UML Class Diagrams, Sequence Diagrams, API Documentation, and more.
 
+### ⭐ Feel free to leave a star and follow for updates!
+### 📣 Feedback is always welcome — suggest features you'd like to see!
 
-## Features
+📖 **Read the article**:  
+<a href="https://medium.com/@priom7197/laravel2doc-generate-sequence-diagrams-from-your-laravel-application-in-seconds-1-2-84bf8ac8a193">
+  <img src="https://img.shields.io/badge/Read%20Article-%23000000?style=for-the-badge&logo=medium&logoColor=white" alt="Read Article">
+</a>
 
-- 📊 **Entity Relationship Diagrams (ERD)**: Visual representation of your database schema
-- 📝 **UML Class Diagrams**: Object-oriented view of your models and their relationships
-- 🔄 **Sequence Diagrams**: Flow of interactions between components
-- 📚 **API Documentation**: Comprehensive documentation of your API endpoints
-- 🚀 **Interactive Interface**: Browse all documentation through a user-friendly web interface
-- 🔍 **Automatic Analysis**: No configuration needed - just install and run
+---
 
-  <div align="center">
-   <img src="https://github.com/Priom7/laravel2doc/blob/main/dashboard-sample.png" alt="Cover Banner" width="100%" height="auto"> 
-</div>
+## ✨ Features
 
-## Installation
+- 📊 **ERD** — Entity Relationship Diagrams
+- 📝 **UML** — Class Diagrams for Models
+- 🔄 **Sequence Diagrams** — Component interaction flows
+- 📚 **API Docs** — Endpoints, controllers, routes
+- 🚀 **Interactive Viewer** — Browse via built-in web interface
+- 🔍 **Zero Config** — Auto-analyzes Laravel project structure
 
-### Global Installation
+---
+
+## 📦 Installation
+
+### Global:
 
 ```bash
 npm install -g @priom7/laravel2doc
-```
+````
 
-### Local Installation (within a Laravel project)
+### Local (within a Laravel project):
 
 ```bash
 cd your-laravel-project
 npm install @priom7/laravel2doc
 ```
 
-## Usage
+---
 
-### Within a Laravel Project
+## 🚀 Usage
 
-Navigate to your Laravel project root directory and run:
-
-```bash
-npx laravel2doc
-```
-
-This will analyze your Laravel project and generate documentation in the `laravel2doc` directory. It will also start a web server to view the documentation.
-
-### Options
-
-- `-p, --port <number>`: Port to serve documentation on (default: 3333)
-- `-o, --output <dir>`: Output directory (default: 'laravel2doc')
-
-### Demo Mode
-
-If you run Laravel2Doc outside a Laravel project, it will generate example documentation to demonstrate its features:
+Inside your Laravel project:
 
 ```bash
 npx laravel2doc
 ```
 
-## Generated Documentation
+This generates documentation in the `laravel2doc/` folder and launches a web viewer.
 
-Laravel2Doc generates the following documentation:
+### ⚙️ Options
 
-### Entity Relationship Diagrams (ERD)
+| Flag                 | Description                       | Default       |
+| -------------------- | --------------------------------- | ------------- |
+| `-p, --port <num>`   | Port for local server             | `3333`        |
+| `-o, --output <dir>` | Directory to output documentation | `laravel2doc` |
 
-- Database tables with columns and data types
-- Primary keys and foreign keys
-- Relationships between tables
-    <div align="center">
-   <img src="https://github.com/Priom7/laravel2doc/blob/main/erd-sample.png" alt="Cover Banner" width="100%" height="auto"> 
+### 🧪 Demo Mode
+
+Try it outside a Laravel project to see a live example:
+
+```bash
+npx laravel2doc
+```
+
+---
+
+## 🧾 Generated Documentation
+
+### 📊 Entity Relationship Diagram (ERD)
+
+* Tables, columns, data types
+* Primary/foreign keys, relationships
+
+<div align="center">
+   <img src="https://github.com/Priom7/laravel2doc/blob/main/erd-sample.png" alt="ERD Sample" width="100%">
 </div>
 
-### UML Class Diagrams
+---
 
-- Models with properties and methods
-- Relationships between models
-- Inheritance hierarchies
-     <div align="center">
-   <img src="https://github.com/Priom7/laravel2doc/blob/main/uml-sample.png" alt="Cover Banner" width="100%" height="auto"> 
+### 🏗 UML Class Diagram
+
+* Model properties, methods
+* Relationships and inheritance
+
+<div align="center">
+   <img src="https://github.com/Priom7/laravel2doc/blob/main/uml-sample.png" alt="UML Sample" width="100%">
 </div>
 
-### Sequence Diagrams
+---
 
-- Controller actions and their interactions
-- Common operations like create, read, update, delete
-- Flow of data between components
-     <div align="center">
-   <img src="https://github.com/Priom7/laravel2doc/blob/main/sequence-sample.png" alt="Cover Banner" width="100%" height="auto"> 
+### 🔄 Sequence Diagrams
+
+* Controller method flows
+* CRUD interaction flow
+
+<div align="center">
+   <img src="https://github.com/Priom7/laravel2doc/blob/main/sequence-sample.png" alt="Sequence Sample" width="100%">
 </div>
 
-### API Documentation
+---
 
-- Endpoints with HTTP methods
-- Controller handlers and parameters
-- Route definitions
-     <div align="center">
-   <img src="https://github.com/Priom7/laravel2doc/blob/main/api-sample.png" alt="Cover Banner" width="100%" height="auto"> 
+### 🌐 API Documentation
+
+* Routes, HTTP methods, controllers
+* Parameter and handler mappings
+
+<div align="center">
+   <img src="https://github.com/Priom7/laravel2doc/blob/main/api-sample.png" alt="API Sample" width="100%">
 </div>
 
-## How It Works
+---
 
-Laravel2Doc analyzes your Laravel project by:
+## 🧠 How It Works
 
-1. Scanning model files to extract relationships and properties
-2. Analyzing migrations to build database schema
-3. Parsing controllers to understand application flow
-4. Examining route files to document API endpoints
-5. Generating interactive documentation with Mermaid diagrams
+1. **Scans** Laravel models for relationships and attributes
+2. **Parses** migrations to reconstruct DB schema
+3. **Analyzes** controllers and route files
+4. **Generates** Mermaid-based diagrams and structured API docs
+5. **Serves** everything via a local web interface
 
-## Requirements
+---
 
-- Node.js 14+
-- Laravel 8+ project (for Laravel-specific documentation)
+## 🛠 Requirements
 
-## Contributing
+* Node.js 14+
+* Laravel 8+ project
 
-Contributions are welcome! Please feel free to submit a Pull Request.
+---
 
-## Author
+## 🤝 Contributing
 
-Created by [priom7](https://github.com/priom7)
-- Md Sharif Alam 
+Contributions are welcome! Feel free to submit a pull request or feature request.
+
+---
+
+## 👨‍💻 Author
+
+Created by [@priom7](https://github.com/priom7)
+Md Sharif Alam
+
+---
+
+> 🌟 Found it useful? Give it a ⭐ on GitHub and share with Laravel developers!
+
+
