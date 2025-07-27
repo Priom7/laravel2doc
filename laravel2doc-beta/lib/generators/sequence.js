@@ -1526,7 +1526,7 @@ function generateDiagramViewHTML(projectInfo, diagram, config) {
 <body>
   <header>
   ${projectInfo}, ${diagram}, ${config}
-    <h1>${diagram.name}ehtrhrhjtrhtrh</h1>
+    <h1>${diagram.name}</h1>
     <h2>${projectInfo.name} (Laravel ${projectInfo.version})</h2>
   </header>
   
